@@ -1,0 +1,29 @@
+pipeline
+{
+	agent any
+	
+	stages
+	{
+		stage('CucumberBDDFramework')
+		{
+			steps
+			{
+				bat "mvn compile"
+			}
+		}
+		
+		stage('POM_PageFactories')
+		{
+			steps
+			{
+				bat "mvn install"	
+				echo 'Installing the project'
+			}		
+		}
+	
+	}
+
+
+
+
+}
