@@ -8,7 +8,8 @@ pipeline
 		{
 			steps
 			{
-				bat "mvn compile"
+				bat "mvn clean"
+				bat "mvn install"
 			}
 		}
 		
@@ -16,8 +17,9 @@ pipeline
 		{
 			steps
 			{
+				bat "mvn clean"
 				bat "mvn install"	
-				echo 'Installing the project'
+				echo 'Installing the project again'
 			}		
 		}
 	
