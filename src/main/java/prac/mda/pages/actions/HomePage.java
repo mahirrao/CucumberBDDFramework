@@ -26,7 +26,12 @@ public class HomePage
 	
 	public void goToPackages()
 	{
-		
+		try {
+			home.searchText.click();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	public void bookAFlight(String from, String to, String departingDate, String returnDate,

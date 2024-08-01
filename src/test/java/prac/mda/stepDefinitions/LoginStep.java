@@ -77,7 +77,11 @@ public class LoginStep
 	    // Double, Byte, Short, Long, BigInteger or BigDecimal.
 	    //
 	    // For other transformations you can register a DataTableType.
-		System.out.println("user enters skills: " +list.get(1));	
+		for(String listItem : list)
+		{
+			System.out.println("user enters skills: " +listItem);	
+		}
+//		System.out.println("user enters skills: " +list.get(1));	
 	}
 
 	@Then("user enters experience and location")
@@ -90,9 +94,31 @@ public class LoginStep
 	    //
 	    // For other transformations you can register a DataTableType.
 		// List<Map<String,String>> data = dataTable.asMaps(String.class, String.class);
-		List<Map<String,String>> data = dataTable.asMaps();
-		System.out.println("user enters the experience: " +data.get(1).get("Experience"));	
-		System.out.println("user enters the location: " +data.get(1).get("Location"));
+		
+		
+		/* Code for Datatable as lists */
+		
+		List<List<String>> dataList = dataTable.asLists();
+		System.out.println("Data from the Header - Experience: " +dataList.get(0).get(0));	// Header - Experience
+		System.out.println("Data from the Header - Location: " +dataList.get(0).get(1));	// Header - Location
+		System.out.println("Data from First list - Experience: " +dataList.get(1).get(0));	// First list - Experience
+		System.out.println("Data from First list - Location: " +dataList.get(1).get(1));	// First list - Location
+		System.out.println("Data from Second list - Experience: " +dataList.get(2).get(0));	// Second list - Experience
+		System.out.println("Data from Second list - Location: " +dataList.get(2).get(1));		// Second list - Location
+		
+		/* Code for Datatable as Maps */
+
+		List<Map<String,String>> dataMap = dataTable.asMaps();
+		
+		for (Map<String,String> dataValue : dataMap)
+		{
+			System.out.println("user enters the experience: " +dataValue.get("Experience"));	
+			System.out.println("user enters the location: " +dataValue.get("Location"));
+		}
+		
+		
+		//System.out.println("user enters the experience: " +data.get(1).get("Experience"));	
+		//System.out.println("user enters the location: " +data.get(1).get("Location"));
 	}
 
 

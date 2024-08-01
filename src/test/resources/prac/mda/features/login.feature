@@ -48,7 +48,7 @@ As a user, I want to login to the Naukri website
      
 Background:
 	Given user navigates to Naukri website: "https://www.naukri.com"
-	And user validates the Homepage title: "Jobs - Recruitment - Job Search - Employment -Job Vacancies - Naukri.com"
+	And user validates the Homepage title: "Jobs - Recruitment - Job Search - Employment - Job Vacancies - Naukri.com"
 	
 Scenario Outline: In order to verify the login to Naukri as given user
 
